@@ -1,15 +1,25 @@
-import { FormContextProvider } from './FormContext';
+import { FormContextProvider } from "./FormContext";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Ubuntu } from "next/font/google";
 import "./globals.css";
+import styles from "./layout.module.css";
+import FormNav from "./Components/FormNav";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const ubuntuRegular = Ubuntu({
+  weight: "400",
+  variable: "--font-ubuntu",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const ubuntuMedium = Ubuntu({
+  weight: "500",
+  variable: "--font-ubuntu",
+  subsets: ["latin"],
+});
+
+const ubuntuBold = Ubuntu({
+  weight: "700",
+  variable: "--font-ubuntu",
   subsets: ["latin"],
 });
 
@@ -26,10 +36,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${styles.body} ${ubuntuRegular.variable} ${ubuntuMedium.variable} ${ubuntuBold.variable} antialiased`}
       >
         <FormContextProvider>
-          {children}
+          <div className={styles.card}>
+            <FormNav />
+            <div className={styles.children}>{children}</div>
+          </div>
         </FormContextProvider>
       </body>
     </html>

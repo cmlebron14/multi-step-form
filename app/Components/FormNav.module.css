@@ -1,0 +1,73 @@
+.formNav {
+  background-image: url("./../../public/images/bg-sidebar-desktop.svg");
+  background-position: bottom right;
+  background-size: cover;
+  min-width: 274px;
+  padding: 40px 32px;
+
+  @media (max-width: 767px) {
+    background-image: url("./../../public/images/bg-sidebar-mobile.svg");
+    background-position: center center;
+    display: flex;
+    height: 172px;
+    justify-content: center;
+    padding: 32px;
+  }
+}
+
+.stepWrapper {
+  display: flex;
+  margin-bottom: 32px;
+
+  @media (max-width: 767px) {
+    margin-bottom: 0;
+  }
+}
+
+.number {
+  align-items: center;
+  border: solid 1px #ffffff;
+  border-radius: 50%;
+  display: flex;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  height: 33px;
+  justify-content: center;
+  line-height: 1;
+  margin-right: 16px;
+  width: 33px;
+
+  &.active {
+    border-color: #bee2fd;
+    background: #bee2fd;
+    color: #022959;
+  }
+
+  @media (max-width: 767px) {
+    margin: 0 8px;
+  }
+}
+
+.stepText {
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+
+.step {
+  color: #abbcff;
+  font-size: 12px;
+  line-height: 1.2;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.stepTitle {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
