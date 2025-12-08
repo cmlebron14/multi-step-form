@@ -1,4 +1,6 @@
 import { FormContextProvider } from "./FormContext";
+import { ThemeProvider } from "@mui/material/styles";
+import customTheme from "./theme";
 import type { Metadata } from "next";
 import { Ubuntu } from "next/font/google";
 import "./globals.css";
@@ -39,10 +41,12 @@ export default function RootLayout({
         className={`${styles.body} ${ubuntuRegular.variable} ${ubuntuMedium.variable} ${ubuntuBold.variable} antialiased`}
       >
         <FormContextProvider>
-          <div className={styles.card}>
-            <FormNav />
-            <div className={styles.children}>{children}</div>
-          </div>
+          <ThemeProvider theme={customTheme}>
+            <div className={styles.card}>
+              <FormNav />
+              <div className={styles.children}>{children}</div>
+            </div>
+          </ThemeProvider>
         </FormContextProvider>
       </body>
     </html>
